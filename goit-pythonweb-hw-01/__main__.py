@@ -1,5 +1,5 @@
-from task_1 import execute as task_1
-from task_2 import main as task_2
+from .task_1 import execute as task_1
+from .task_2 import main as task_2
 
 
 def main():

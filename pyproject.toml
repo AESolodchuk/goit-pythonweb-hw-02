@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "new folder"
+name = "goit_pythonweb_hw_01"
 version = "0.1.0"
 description = ""
 authors = ["AESolodchuk <solodchuk@gmail.com>"]
