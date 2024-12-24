@@ -1,4 +1,9 @@
+import logging
 from abc import ABC, abstractmethod
+
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 
 class Vehicle(ABC):
@@ -20,44 +25,46 @@ class VehicleFactory(ABC):
 
 
 class Car(Vehicle):
-    def __init__(self, make, model, factory):
-        self.make = make
-        self.model = model
-        self.factory = factory
+
+    def __init__(self, make: str, model: str, factory: str):
+        self.make: str = make
+        self.model: str = model
+        self.factory: str = factory
 
     def start_engine(self):
-        print(f"{self.make} {self.model} {self.factory}: Двигун запущено")
+        logger.info(f"{self.make} {self.model} {self.factory}: Двигун запущено")
 
 
 class Motorcycle(Vehicle):
-    def __init__(self, make, model, factory):
-        self.make = make
-        self.model = model
-        self.factory = factory
+
+    def __init__(self, make: str, model: str, factory: str):
+        self.make: str = make
+        self.model: str = model
+        self.factory: str = factory
 
     def start_engine(self):
-        print(f"{self.make} {self.model} {self.factory}: Мотор заведено")
+        logger.info(f"{self.make} {self.model} {self.factory}: Мотор заведено")
 
 
 class USVehicleFactory(VehicleFactory):
     def __init__(self):
-        self.name = "US Spec"
+        self.name: str = "US Spec"
 
-    def create_car(self, make, model):
+    def create_car(self, make, model) -> Car:
         return Car(make, model, self.name)
 
-    def create_motorcycle(self, make, model):
+    def create_motorcycle(self, make, model) -> Motorcycle:
         return Motorcycle(make, model, self.name)
 
 
 class EUVehicleFactory(VehicleFactory):
     def __init__(self):
-        self.name = "EU Spec"
+        self.name: str = "EU Spec"
 
-    def create_car(self, make, model):
+    def create_car(self, make, model) -> Car:
         return Car(make, model, self.name)
 
-    def create_motorcycle(self, make, model):
+    def create_motorcycle(self, make, model) -> Motorcycle:
         return Motorcycle(make, model, self.name)
 
 
