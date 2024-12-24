@@ -1,14 +1,28 @@
-# ДЗ Тема: Основи технології  Docker
+# Проєкт на FastAPI у Docker
 
-Створіть віртуальне оточення то встановіть необхідні бібліотеки
+## Опис
 
-```bash
-pip install -r requirements.txt
-```
+Цей проєкт — це веб-додаток, створений на основі FastAPI, який використовує Docker для контейнеризації.
 
-Запуск:
+## Вимоги
 
-```bash 
-python main.py
-```
+- Docker
+- Docker Compose
 
+## Установка
+
+1. Клонувати репозиторій:
+   ```bash
+   git clone https://github.com/your-repo.git
+   cd your-project
+   ```
+2. Запустити проєкт:
+
+   ```bash
+   docker-compose up --build
+   ```
+
+3. Відкрити додаток у браузері:
+   ```bash
+   http://localhost:8000.
+   ```
